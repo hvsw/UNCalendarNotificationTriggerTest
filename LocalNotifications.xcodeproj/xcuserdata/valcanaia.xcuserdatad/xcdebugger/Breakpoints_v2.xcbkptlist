@@ -14,8 +14,8 @@
             filePath = "LocalNotifications/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "tap(_:)"
             landmarkType = "7">
          </BreakpointContent>

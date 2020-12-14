@@ -11,15 +11,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var secondsTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        let c: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second]
 //        let d1 = Date()
-//        
+//
 //        let a = Calendar.current.dateComponents(c, from: d1)
 //        print(a)
-//        
+//
 //        let secondsFromGMT = TimeZone.current.secondsFromGMT()
 //        print(secondsFromGMT)
 //        let d2 = d1.addingTimeInterval(TimeInterval(secondsFromGMT))
@@ -28,6 +30,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tap(_ sender: Any) {
+        guard let seconds = TimeInterval(self.secondsTextField.text ?? "") else {
+            self.secondsTextField.becomeFirstResponder()
+            return
+        }
+        
         let content = UNMutableNotificationContent()
         content.body = "body"
         content.sound = .default
@@ -37,7 +44,7 @@ class ViewController: UIViewController {
         let secondsFromGMT = TimeInterval(TimeZone.current.secondsFromGMT())
         print(secondsFromGMT)
         
-        let fireDateCaralho = Date().addingTimeInterval(2)
+        let fireDateCaralho = Date().addingTimeInterval(seconds)
         print(fireDateCaralho)
         
         let fireDateDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
