@@ -44,11 +44,11 @@ class ViewController: UIViewController {
         let secondsFromGMT = TimeInterval(TimeZone.current.secondsFromGMT())
         print(secondsFromGMT)
         
-        let fireDateCaralho = Date().addingTimeInterval(seconds)
-        print(fireDateCaralho)
+        let fireDate = Date().addingTimeInterval(seconds)
+        print(fireDate)
         
         let fireDateDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-                                                                     from: fireDateCaralho)
+                                                                     from: fireDate)
         print(fireDateDateComponents)
         
         let calendarTrigger = UNCalendarNotificationTrigger(dateMatching: fireDateDateComponents,
